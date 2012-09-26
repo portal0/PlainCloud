@@ -7,7 +7,7 @@ if ($_POST["username"] && $_POST["password"]) {
 	$username = $_POST["username"];
 	$passNoMd5 = $_POST["password"];
 	$password = md5($passNoMd5);
-
+//test
 	mysqlLogin(); //login in de database
 	$result =  query("SELECT * FROM users WHERE username = '$username' AND password = '$password'"); //voer query uit
 	$nr = mysql_num_rows($result); //tel de results
