@@ -33,20 +33,6 @@ if($os == "Windows") {
 passthru("sudo virt-install -n ".$vm." -r ".$ram." --network bridge:br0 --cdrom=/vms/install/winxp_pro.iso -f /vms/".$username."/".$vm.".qcow2 -s ".$disk." --noautoconsole --vnc --vncport=".$vnc." --connect qemu:///system");
 putenv("VAR1=$vm");
 system("/bin/bash /vms/install/sed.sh $vm");
-//passthru("sudo sed '29i<source file=/vms/install/winxp_pro.iso/>' /etc/libvirt/qemu/$vm.xml > /etc/libvirt/qemu/sed-file1.xml");
-//passthru("sudo sed '27c<disk type=file device=cdrom>' /etc/libvirt/qemu/sed-file1.xml > /etc/libvirt/qemu/sed-file2.xml");
-//passthru('sudo mv /etc/libvirt/qemu/'.$vm.'.xml /etc/libvirt/qemu/will-delete');
-//passthru('sudo mv /etc/libvirt/qemu/sed-file2.xml /etc/libvirt/qemu/'.$vm.'.xml');
-//passthru('sudo rm /etc/libvirt/qemu/sed-file1.xml');
-//passthru('sudo rm /etc/libvirt/qemu/will-delete');
-//passthru('sudo virsh define /etc/libvirt/qemu/'.$vm.'.xml');
-
-//passthru('sudo qemu-img create -f qcow2 /vms/'.$username.'/'.$vm.'.img '.$disk.'G');
-//passthru('sudo virt-install -n '.$vm.' -r '.$ram.' -f '.$vm.'.qcow2 -s '.$disk.' --cdrom=/vms/install/winxp_pro.iso --vnc --vncport='.$vnc);
-//passthru('sudo cp /vms/install/temp_winxp.img /vms/'.$username);
-//passthru('sudo mv /vms/'.$username.'/temp_winxp.img /vms/'.$username.'/'.$vm.'.img');
-//passthru('sudo virsh start '.$vm);
-//passthru('sudo qemu -m '.$ram.' -vnc :'.$vnc.' -hda /vms/'.$username.'/'.$vm.'.img -cdrom /vms/install/winxp_pro.iso -boot c');
 }
 if($os == "Linux") {
 passthru('sudo qemu-img create -f qcow2 /vms/'.$username.'/'.$vm.'.img '.$disk.'G');
