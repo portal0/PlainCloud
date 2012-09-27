@@ -26,4 +26,3 @@ if ($_POST["username"] && $_POST["password"] && $_POST["password2"]) {
 
 } else echo "<center><h1>type something</h1></center>";
 
-?>
